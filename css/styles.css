@@ -1,0 +1,184 @@
+/* CSS Document */
+th,
+h1,
+h2,
+tbody,
+td,
+tr {
+    font-family: sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    /* que es esto */
+    align-items: center;
+    /* que es esto */
+    display: flex;
+    /* que es esto */
+    justify-content: space-around;
+    /* que es esto */
+}
+
+.titulo1 {
+    margin: 0;
+    /* que es esto */
+}
+
+.subtitulo1 {
+    margin: 0;
+    /* que es esto */
+}
+
+.logoI {
+    width: 100%;
+    /* que es esto */
+    max-width: 60px;
+    /* que es esto */
+    height: auto;
+    /* que es esto */
+    margin-right: 20px;
+    /* que es esto */
+    position: absolute;
+
+    /* que es esto */
+}
+
+.logoD {
+    width: 100%;
+    /* que es esto */
+    max-width: 60px;
+    /* que es esto */
+    height: auto;
+    /* que es esto */
+    margin-right: 2px;
+    /* que es esto */
+    position: absolute;
+    /* que es esto */
+    right: 0;
+    /* que es esto */
+    top: 10px;
+}
+
+.prodList {
+    font-size: x-large;
+    height: 60vh;
+    max-height: 60vh;
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+#tblLista {
+    max-height: 50%;
+    width: 100%;
+    font-size: larger;
+}
+
+#bdContenido {
+    max-height: 10%;
+    width: 100%;
+    font-size: larger;
+}
+
+.escaner {
+    font-size: x-large;
+    width: calc(100% - 8px);
+    height: 50%;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    height: 15vh;
+    width: 20vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#btn1 {
+    background-image: url("../img/close-7772967_1280.png");
+    /* que es esto */
+    background-size: 70%;
+    /* que es esto */
+    background-position: center;
+    /* que es esto */
+    background-repeat: no-repeat;
+    /* que es esto */
+    padding: 10px;
+    /* que es esto */
+}
+
+#btn2 {
+    background-image: url("../img/credit-card-8708087_1280.png");
+    /* que es esto */
+    background-size: 70%;
+    /* que es esto */
+    background-position: center;
+    /* que es esto */
+    background-repeat: no-repeat;
+    /* que es esto */
+    padding: 10px;
+    /* que es esto */
+}
+
+#btn3 {
+    background-image: url("../img/bulb-1294335_1280.png");
+    /* que es esto */
+    background-size: 70%;
+    /* que es esto */
+    background-position: center;
+    /* que es esto */
+    background-repeat: no-repeat;
+    /* que es esto */
+    padding: 10px;
+    /* que es esto */
+}
+
+#btn4 {
+    background-image: url("../img/shopping-9802185_1280.png");
+    /* que es esto */
+    background-size: 70%;
+    /* que es esto */
+    background-position: center;
+    /* que es esto */
+    background-repeat: no-repeat;
+    /* que es esto */
+    padding: 10px;
+    /* que es esto */
+}
+
+#btn5 {
+    background-image: url("../img/drop-145831_1280.png");
+    /* que es esto */
+    background-size: 70%;
+    /* que es esto */
+    background-position: center;
+    /* que es esto */
+    background-repeat: no-repeat;
+    /* que es esto */
+    padding: 10px;
+    /* que es esto */
+}
+.total {
+    display: flex;
+    /* que es esto */
+    border: 2px solid black;
+    /* que es esto */
+    width: 30%;
+    /* que es esto */
+    height: 5dvw;
+    /* que es esto */
+    margin-left: auto;
+    /* que es esto */
+    font-size: xx-large;
+    /* que es esto */
+    align-items: center;
+    /* que es esto */
+    justify-content: center;
+    /* que es esto */
+}
+

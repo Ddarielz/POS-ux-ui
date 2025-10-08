@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de venta</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/function.js" defer></script>
+</head>
+
+<body>
+    <!-- Imagen en la esquina superior izquierda -->
+    <img src="./img/logo.png" class="logoI">
+    <!-- Definimos titulo -->
+    <div class="titulo">
+        <div>
+            <h1 class="titulo1">Don Baratón</h1>
+            <h2 class="subtitulo1">No es bueno, pero es barato.</h2>
+        </div>
+    </div>
+    <!-- Imagen en la esquina superior derecha -->
+    <img src="./img/logo2.png" class="logoD">
+
+    <!-- Tabla de productos -->
+    <div class="prodList">
+        <table border="0" id="tblLista">
+            <thead>
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tblListaBody">
+                <!-- Productos de forma dinámica -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Input para introducir el código -->
+    <input type="text" id="txtCode" class="escaner" placeholder="Código del producto" onkeypress="buscarProducto(event)" />
+
+    <!-- Botones con imagen -->
+    <div class="botones">
+        <input type="button" id="btn1" class="btn" />
+        <input type="button" id="btn2" class="btn" />
+        <input type="button" id="btn3" class="btn" />
+        <input type="button" id="btn4" class="btn" />
+        <input type="button" id="btn5" class="btn" />
+
+        <!-- Total -->
+        <div class="total">
+            <h2 class="total1">Total: $<span id="total">0.00</span></h2>
+        </div>
+    </div>
+</body>
+</html>

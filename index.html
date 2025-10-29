@@ -2,58 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punto de venta</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/function.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto de venta</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/function.js" defer></script>
 </head>
 
 <body>
-    <!-- Imagen en la esquina superior izquierda -->
-    <img src="./img/logo.png" class="logoI">
-    <!-- Definimos titulo -->
-    <div class="titulo">
-        <div>
-            <h1 class="titulo1">Don Baratón</h1>
-            <h2 class="subtitulo1">No es bueno, pero es barato.</h2>
-        </div>
+  <!-- Imagen en la esquina superior izquierda -->
+  <img src="./img/logo.png" class="logoI">
+
+  <!-- Definimos titulo -->
+  <div class="titulo">
+    <div>
+      <h1 class="titulo1">Don Baratón</h1>
+      <h2 class="subtitulo1">No es bueno, pero es barato.</h2>
     </div>
-    <!-- Imagen en la esquina superior derecha -->
-    <img src="./img/logo2.png" class="logoD">
+  </div>
 
-    <!-- Tabla de productos -->
-    <div class="prodList">
-        <table border="0" id="tblLista">
-            <thead>
-                <tr>
-                    <th>Cantidad</th>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody id="tblListaBody">
-                <!-- Productos de forma dinámica -->
-            </tbody>
-        </table>
+  <!-- Imagen en la esquina superior derecha -->
+  <img src="./img/logo2.png" class="logoD">
+
+  <!-- Tabla de productos -->
+  <div class="prodList">
+    <table border="0" id="tblLista">
+      <thead>
+        <tr>
+          <th>Cantidad</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tblListaBody">
+        <!-- Productos de forma dinámica -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Input para introducir el código -->
+  <input type="text" id="txtCode" class="escaner" placeholder="Código del producto" onkeypress="buscarProducto(event)" />
+
+  <!-- Botones con imagen -->
+  <div class="botones">
+    <input type="button" id="btn1" class="btn" />
+    <input type="button" id="btn2" class="btn" />
+    <input type="button" id="btn3" class="btn" />
+    <input type="button" id="btn4" class="btn" />
+    <input type="button" id="btn5" class="btn" />
+
+    <!-- Total -->
+    <div class="total">
+      <h2 class="total1">Total: $<span id="total">0.00</span></h2>
     </div>
+  </div>
 
-    <!-- Input para introducir el código -->
-    <input type="text" id="txtCode" class="escaner" placeholder="Código del producto" onkeypress="buscarProducto(event)" />
-
-    <!-- Botones con imagen -->
-    <div class="botones">
-        <input type="button" id="btn1" class="btn" />
-        <input type="button" id="btn2" class="btn" />
-        <input type="button" id="btn3" class="btn" />
-        <input type="button" id="btn4" class="btn" />
-        <input type="button" id="btn5" class="btn" />
-
-        <!-- Total -->
-        <div class="total">
-            <h2 class="total1">Total: $<span id="total">0.00</span></h2>
-        </div>
+  <!-- Modal de contraseña -->
+  <div id="modalClave" style="display:none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:20px; border-radius:10px; text-align:center; min-width:280px;">
+      <h3>🔒 Ingresa la contraseña</h3>
+      <input type="password" id="inputClaveModal" style="font-size:18px; padding:8px; width:100%; text-align:center;">
+      <br><br>
+      <button id="btnAceptarClave" style="padding:8px 20px;">Aceptar</button>
+      <button id="btnCancelarClave" style="padding:8px 20px;">Cancelar</button>
     </div>
+  </div>
 </body>
 </html>

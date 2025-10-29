@@ -179,7 +179,59 @@ function buscarProducto(evento) {
   }
 }
 
-// Detectar teclas globales
+// --- Prompt de transferencia ---
+function promptTransferencia() {
+  let numeroTarjeta = prompt("💳 Ingresa el número de tarjeta del cliente:");
+  if (numeroTarjeta === null) return;
+  if (numeroTarjeta.trim() === "") {
+    alert("⚠️ Número de tarjeta no válido.");
+    return;
+  }
+
+  let monto = prompt("💰 Ingresa el monto a transferir:");
+  if (monto === null) return;
+  monto = parseFloat(monto);
+  if (isNaN(monto) || monto <= 0) {
+    alert("⚠️ Monto inválido.");
+    return;
+  }
+
+  let confirmacion = confirm(
+    `Confirmar transferencia de $${monto.toFixed(2)} a la tarjeta ${numeroTarjeta}?`
+  );
+  if (confirmacion) {
+    transferir(numeroTarjeta, monto);
+  }
+}
+
+// --- Transferir ---
+function transferir(numeroTarjeta, monto) {
+  alert(
+    `✅ Transferencia de $${monto.toFixed(2)} a la tarjeta ${numeroTarjeta} realizada con éxito.`
+  );
+  cierreVenta(monto);
+}
+
+// --- Cierre de venta ---
+function cierreVenta(pago) {
+  if (pago >= totalVenta) {
+    let cambio = pago - totalVenta;
+    alert(
+      `✅ Venta finalizada.\nTotal: $${totalVenta.toFixed(2)}\nPago: $${pago.toFixed(
+        2
+      )}\nCambio: $${cambio.toFixed(2)}`
+    );
+
+    document.getElementById("tblListaBody").innerHTML = "";
+    totalVenta = 0.0;
+    document.getElementById("total").innerText = totalVenta.toFixed(2);
+    ultimoProducto = null;
+  } else {
+    alert("⚠️ Pago insuficiente.");
+  }
+}
+
+// --- Eventos globales ---
 document.addEventListener("keydown", function (evento) {
   // Eliminar último producto con ESC
   if (evento.key === "Escape") {
@@ -192,16 +244,55 @@ document.addEventListener("keydown", function (evento) {
       totalVenta -= monto;
       if (totalVenta < 0) totalVenta = 0;
       document.getElementById("total").innerText = totalVenta.toFixed(2);
-
       tabla.deleteRow(filas - 1);
     }
   }
 
   // Repetir último producto con TAB
   if (evento.key === "Tab") {
-    evento.preventDefault(); // Evita cambiar de foco
+    evento.preventDefault();
     if (ultimoProducto !== null) {
       agregarFila(ultimoProducto.producto, ultimoProducto.cantidad);
     }
+  }
+
+  // Mostrar modal de contraseña con tecla C
+  if (evento.key.toLowerCase() === "c") {
+    const modal = document.getElementById("modalClave");
+    const input = document.getElementById("inputClaveModal");
+    modal.style.display = "flex";
+    input.value = "";
+    input.focus();
+
+    const btnAceptar = document.getElementById("btnAceptarClave");
+    const btnCancelar = document.getElementById("btnCancelarClave");
+
+    btnAceptar.onclick = () => {
+      const clave = input.value.trim();
+      if (clave === "12345") {
+        if (confirm("¿Seguro que deseas cancelar la venta?")) {
+          document.getElementById("tblListaBody").innerHTML = "";
+          totalVenta = 0.0;
+          document.getElementById("total").innerText = totalVenta.toFixed(2);
+          ultimoProducto = null;
+          alert("✅ Venta cancelada correctamente.");
+        }
+      } else {
+        alert("❌ Clave incorrecta.");
+      }
+      modal.style.display = "none";
+    };
+
+    btnCancelar.onclick = () => {
+      modal.style.display = "none";
+    };
+  }
+});
+
+// --- Asociar botón de transferencia ---
+document.addEventListener("DOMContentLoaded", function () {
+  const btn1 = document.getElementById("btn1");
+  if (btn1) {
+    btn1.addEventListener("click", promptTransferencia);
   }
 });

@@ -1,0 +1,10 @@
+create table productos(
+    `codigo_producto` INT UNSIGNED PRIMARY KEY CHECK (`codigo_producto`>0),
+    `nombre producto` VARCHAR(255) NOT NULL,
+    `precio_producto` DOUBLE(7,2) UNSIGNED NOT NULL CHECK (`precio_producto`>0)
+);
+
+
+create table if not exist Ventas(
+    id_venta
+)

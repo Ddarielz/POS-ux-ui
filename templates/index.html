@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto de venta</title>
+
+  <!-- Archivos estáticos usando Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="{{ url_for('static', filename='js/function.js') }}" defer></script>
+</head>
+
+<body>
+  <!-- Imagen en la esquina superior izquierda -->
+  <img src="{{ url_for('static', filename='img/logo.png') }}" class="logoI">
+
+  <!-- Título -->
+  <div class="titulo">
+    <div>
+      <h1 class="titulo1">Don Baratón</h1>
+      <h2 class="subtitulo1">No es bueno, pero es barato.</h2>
+    </div>
+  </div>
+
+  <!-- Imagen derecha -->
+  <img src="{{ url_for('static', filename='img/logo2.png') }}" class="logoD">
+
+  <!-- Tabla -->
+  <div class="prodList">
+    <table border="0" id="tblLista">
+      <thead>
+        <tr>
+          <th>Cantidad</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+
+      <!-- 🔥 ID corregido para que coincida con function.js -->
+      <tbody id="tabla-productos">
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Input del código -->
+  <input type="text" id="txtCode" class="escaner" placeholder="Código del producto"
+         onkeypress="buscarProducto(event)" />
+
+  <!-- Botones -->
+  <div class="botones">
+    <input type="button" id="btn1" class="btn" />
+    <input type="button" id="btn2" class="btn" />
+    <input type="button" id="btn3" class="btn" />
+    <input type="button" id="btn4" class="btn" />
+    <input type="button" id="btn5" class="btn" />
+
+    <div class="total">
+      <h2 class="total1">Total: $<span id="total">0.00</span></h2>
+    </div>
+  </div>
+
+  <!-- Modal clave -->
+  <div id="modalClave"
+    style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+           background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+
+    <div style="background:#fff; padding:20px; border-radius:10px; text-align:center; min-width:280px;">
+      <h3>🔒 Ingresa la contraseña</h3>
+      <input type="password" id="inputClaveModal"
+             style="font-size:18px; padding:8px; width:100%; text-align:center;">
+      <br><br>
+      <button id="btnAceptarClave" style="padding:8px 20px;">Aceptar</button>
+      <button id="btnCancelarClave" style="padding:8px 20px;">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Modal Comida Rápida -->
+  <div id="modalComidaRapida"
+       style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+              background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+
+    <div style="background:white; padding:20px; border-radius:10px; width:350px;">
+        <h3>🍔 Selección de Comida Rápida</h3>
+
+        <select id="selectComidaRapida" style="width:100%; padding:8px; margin-top:10px;">
+            <option value="">Selecciona un producto</option>
+            <option value="101|Hamburguesa Sencilla|79.00">Hamburguesa Sencilla – $79.00</option>
+            <option value="102|Hamburguesa Doble|109.00">Hamburguesa Doble – $109.00</option>
+            <option value="103|Papas Grandes|45.00">Papas Grandes – $45.00</option>
+            <option value="104|Refresco Grande|35.00">Refresco Grande – $35.00</option>
+            <option value="105|Combo Hamburguesa + Papas|129.00">Combo Hamburguesa + Papas – $129.00</option>
+        </select>
+
+        <div style="margin-top:15px; text-align:right;">
+            <button id="btnCancelarComida">Cancelar</button>
+            <button id="btnAgregarComida">Agregar</button>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>

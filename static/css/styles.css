@@ -100,7 +100,7 @@ tr {
 }
 
 #btn1 {
-    background-image: url("../img/close-7772967_1280.png");
+    background-image: url("../img/credit-card-8708087_1280.png");
     /* que es esto */
     background-size: 70%;
     /* que es esto */
@@ -113,7 +113,7 @@ tr {
 }
 
 #btn2 {
-    background-image: url("../img/credit-card-8708087_1280.png");
+    background-image: url("../img/shopping-9802185_1280.png");
     /* que es esto */
     background-size: 70%;
     /* que es esto */
@@ -139,7 +139,7 @@ tr {
 }
 
 #btn4 {
-    background-image: url("../img/shopping-9802185_1280.png");
+    background-image: url("../img/gratis-png-gota-agua-escritorio-agua.png");
     /* que es esto */
     background-size: 70%;
     /* que es esto */
@@ -152,7 +152,7 @@ tr {
 }
 
 #btn5 {
-    background-image: url("../img/drop-145831_1280.png");
+    background-image: url("../img/pngwing.com.png");
     /* que es esto */
     background-size: 70%;
     /* que es esto */
@@ -182,3 +182,60 @@ tr {
     /* que es esto */
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.lista-comida {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.btnComida {
+  padding: 12px;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btnComida:hover {
+  background: #ddd;
+}
+
+.cerrar {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
